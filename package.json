@@ -9,7 +9,6 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "chai": "^5.1.2",
     "coveralls-next": "^4.2.1",
