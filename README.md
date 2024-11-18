@@ -1,3 +1,5 @@
+![Test Actions](https://github.com/Kitsupitsu/testing-project/actions/workflows/run-coveralls.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/Kitsupitsu/testing-project/badge.svg?branch=master)](https://coveralls.io/github/Kitsupitsu/testing-project?branch=master)
 # Student template
 
 ## Purpose of this repository
