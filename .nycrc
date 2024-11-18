@@ -1,0 +1,11 @@
+{
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "test/**/*"
+  ],
+  "cache": false,
+  "instrument": false,
+  "sourceMap": false
+}

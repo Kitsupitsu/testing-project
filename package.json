@@ -5,15 +5,19 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --reporter mochawesome"
+    "test": "c8 --reporter=lcov mocha --reporter mochawesome",
+    "test-coverage": "npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@babel/register": "^7.25.9",
+    "c8": "^10.1.2",
     "chai": "^5.1.2",
     "coveralls-next": "^4.2.1",
     "mocha": "^10.8.2",
     "mocha-lcov-reporter": "^1.3.0",
-    "mochawesome": "^7.1.3"
+    "mochawesome": "^7.1.3",
+    "nyc": "^17.1.0"
   }
 }
