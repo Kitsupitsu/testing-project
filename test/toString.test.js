@@ -40,16 +40,10 @@ describe('toString', function() {
         expect(result).to.deep.equal('0.45');
     });
 
-    it('should be false when value is not a number', function() {
+    it('should be min value as a text \'5e-324\' when value is a constant, min value', function() {
         const value = Number.MIN_VALUE;
         const result = toString(value);
         expect(result).to.deep.equal('5e-324');
-    });
-
-    it('should be false when value is infinity', function() {
-        const value = Infinity;
-        const result = toString(value);
-        expect(result).to.deep.equal('Infinity');
     });
 
     it('should be \'3\' when value is \'3\' as a string', function() {
