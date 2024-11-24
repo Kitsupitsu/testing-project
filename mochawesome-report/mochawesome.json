@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 2,
-    "tests": 8,
-    "passes": 5,
+    "suites": 3,
+    "tests": 14,
+    "passes": 10,
     "pending": 0,
-    "failures": 3,
-    "start": "2024-11-24T14:50:31.915Z",
-    "end": "2024-11-24T14:50:31.927Z",
-    "duration": 12,
-    "testsRegistered": 8,
-    "passPercent": 62.5,
+    "failures": 4,
+    "start": "2024-11-24T15:13:22.520Z",
+    "end": "2024-11-24T15:13:22.538Z",
+    "duration": 18,
+    "testsRegistered": 14,
+    "passPercent": 71.42857142857143,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ac31cb71-1798-4de6-b4c7-d9b0cbe70d08",
+      "uuid": "8aed1073-bd54-4dc5-b8a8-232a7e62ed2f",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "bed61c71-d51c-4bee-b336-fbbf49989252",
+          "uuid": "1b50ad0a-3803-41b6-8cf2-5b37a8004adb",
           "title": "test",
           "fullFile": "C:\\Github\\testing-project\\test\\add.test.js",
           "file": "\\test\\add.test.js",
@@ -47,15 +47,15 @@
               "context": null,
               "code": "return true;",
               "err": {},
-              "uuid": "25eddab5-7a37-4f24-81d0-9afa3329fee8",
-              "parentUUID": "bed61c71-d51c-4bee-b336-fbbf49989252",
+              "uuid": "edde8506-1d94-427e-9ef2-a6fd05318955",
+              "parentUUID": "1b50ad0a-3803-41b6-8cf2-5b37a8004adb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "25eddab5-7a37-4f24-81d0-9afa3329fee8"
+            "edde8506-1d94-427e-9ef2-a6fd05318955"
           ],
           "failures": [],
           "pending": [],
@@ -66,7 +66,146 @@
           "_timeout": 2000
         },
         {
-          "uuid": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+          "uuid": "1892b25c-9524-4646-be95-27025138d657",
+          "title": "eq",
+          "fullFile": "C:\\Github\\testing-project\\test\\eq.test.js",
+          "file": "\\test\\eq.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should be true when comparing object to itself",
+              "fullTitle": "eq should be true when comparing object to itself",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const object = { 'a': 1 };\nconst result = eq(object, object);\nexpect(result).to.deep.equal(true);",
+              "err": {},
+              "uuid": "22cb62af-a745-47dc-8aa1-1aef05946bfe",
+              "parentUUID": "1892b25c-9524-4646-be95-27025138d657",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be false when comparing object to other",
+              "fullTitle": "eq should be false when comparing object to other",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const object = { 'a': 1 };\nconst other = { 'a': 1 };\nconst result = eq(object, other);\nexpect(result).to.deep.equal(false);",
+              "err": {},
+              "uuid": "cd00046a-d336-4635-8ab8-989718b2526e",
+              "parentUUID": "1892b25c-9524-4646-be95-27025138d657",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be true when comparing the same value",
+              "fullTitle": "eq should be true when comparing the same value",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const result = eq('a', 'a');\nexpect(result).to.deep.equal(true);",
+              "err": {},
+              "uuid": "8d2eaf52-d5ad-4f8e-ac25-e2ad74c41ea4",
+              "parentUUID": "1892b25c-9524-4646-be95-27025138d657",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be false when object and other are not same type",
+              "fullTitle": "eq should be false when object and other are not same type",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const object = 'a';\nconst other = Object('a');\nconst result = eq(object, other);\nexpect(result).to.deep.equal(false);",
+              "err": {
+                "message": "AssertionError: expected true to deeply equal false",
+                "estack": "AssertionError: expected true to deeply equal false\n    at Context.<anonymous> (file:///C:/Github/testing-project/test/eq.test.js:29:32)\n    at process.processImmediate (node:internal/timers:483:21)",
+                "diff": "- true\n+ false\n"
+              },
+              "uuid": "98ec015b-0c70-481d-9f07-b8b30f54b095",
+              "parentUUID": "1892b25c-9524-4646-be95-27025138d657",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be false when object is something but other is NaN",
+              "fullTitle": "eq should be false when object is something but other is NaN",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const object = { 'a': 1 };\nconst other = NaN;\nconst result = eq(object, other);\nexpect(result).to.deep.equal(false);",
+              "err": {},
+              "uuid": "7d758e15-eec4-49c3-837f-690f5d856a51",
+              "parentUUID": "1892b25c-9524-4646-be95-27025138d657",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be true when object and other are NaN",
+              "fullTitle": "eq should be true when object and other are NaN",
+              "timedOut": false,
+              "duration": 0,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const object = NaN;\nconst other = NaN;\nconst result = eq(object, other);\nexpect(result).to.deep.equal(true);",
+              "err": {},
+              "uuid": "687d88ba-98bd-4a5b-a771-e3d8d63c415a",
+              "parentUUID": "1892b25c-9524-4646-be95-27025138d657",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "22cb62af-a745-47dc-8aa1-1aef05946bfe",
+            "cd00046a-d336-4635-8ab8-989718b2526e",
+            "8d2eaf52-d5ad-4f8e-ac25-e2ad74c41ea4",
+            "7d758e15-eec4-49c3-837f-690f5d856a51",
+            "687d88ba-98bd-4a5b-a771-e3d8d63c415a"
+          ],
+          "failures": [
+            "98ec015b-0c70-481d-9f07-b8b30f54b095"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 1,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
           "title": "filter",
           "fullFile": "C:\\Github\\testing-project\\test\\filter.test.js",
           "file": "\\test\\filter.test.js",
@@ -77,7 +216,7 @@
               "title": "should filter nothing if predicate is true for all",
               "fullTitle": "filter should filter nothing if predicate is true for all",
               "timedOut": false,
-              "duration": 1,
+              "duration": 0,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -86,8 +225,8 @@
               "context": null,
               "code": "const array = [1, 3, 7, 4, 6, 5];\nconst predicate = (value) => value >0;\nconst result = filter(array, predicate);\nexpect(result).to.deep.equal([1, 3, 7, 4, 6, 5]);",
               "err": {},
-              "uuid": "cbcc69e7-22c8-4dda-8dd5-0224305a17de",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "53bf0a22-e411-4a56-b9bb-90ae909c9985",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             },
@@ -104,8 +243,8 @@
               "context": null,
               "code": "const array = [1, 3, 7, 4, 6, 5];\nconst predicate = (value) => value >5;\nconst result = filter(array, predicate);\nexpect(result).to.deep.equal([7, 6]);",
               "err": {},
-              "uuid": "02415864-9453-4139-99a6-da4c48ca2162",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "a76e3194-ed86-4a2b-a20a-2fed4f9c110b",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             },
@@ -113,7 +252,7 @@
               "title": "should return an empty array if no numbers fulfill the predicate",
               "fullTitle": "filter should return an empty array if no numbers fulfill the predicate",
               "timedOut": false,
-              "duration": 2,
+              "duration": 0,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -126,8 +265,8 @@
                 "estack": "AssertionError: expected [ [] ] to deeply equal []\n    at Context.<anonymous> (file:///C:/Github/testing-project/test/filter.test.js:25:32)\n    at process.processImmediate (node:internal/timers:483:21)",
                 "diff": "- [\n-   []\n- ]\n+ []\n"
               },
-              "uuid": "a5195b19-8578-47ac-b0f2-80321ae7f0f5",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "997547c7-db69-4600-a812-53f18aa1d286",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             },
@@ -148,8 +287,8 @@
                 "estack": "AssertionError: expected [ [] ] to deeply equal []\n    at Context.<anonymous> (file:///C:/Github/testing-project/test/filter.test.js:32:32)\n    at process.processImmediate (node:internal/timers:483:21)",
                 "diff": "- [\n-   []\n- ]\n+ []\n"
               },
-              "uuid": "55e077c4-8b76-471e-8050-733499822024",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "4de75f4d-227f-430b-97c1-dd7a37f6367a",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             },
@@ -157,7 +296,7 @@
               "title": "should return an empty array when the array is null or not defined",
               "fullTitle": "filter should return an empty array when the array is null or not defined",
               "timedOut": false,
-              "duration": 0,
+              "duration": 1,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -170,8 +309,8 @@
                 "estack": "AssertionError: expected [ [] ] to deeply equal []\n    at Context.<anonymous> (file:///C:/Github/testing-project/test/filter.test.js:38:37)\n    at process.processImmediate (node:internal/timers:483:21)",
                 "diff": "- [\n-   []\n- ]\n+ []\n"
               },
-              "uuid": "55245d06-9812-4525-b25e-55ecb0f44550",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "00ef8b78-2e31-4857-a595-f797807d2c56",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             },
@@ -188,8 +327,8 @@
               "context": null,
               "code": "const array = [1, 3, 7, 4, 6, 5];\nconst predicate = (value, index, array) => value === array[index];\nconst result = filter(array, predicate);\nexpect(result).to.deep.equal([1, 3, 7, 4, 6, 5]);",
               "err": {},
-              "uuid": "38b1fa36-a8d2-4845-adef-a42d5911b796",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "ebee197b-23cf-49b8-863e-a5f29dc541bf",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             },
@@ -206,27 +345,27 @@
               "context": null,
               "code": "const users = [\n    { user: 'barney', active: true },\n    { user: 'fred',   active: false }\n];\nconst predicate = (user) => user.active;\nconst result = filter(users, predicate);\nexpect(result).to.deep.equal([{ user: 'barney', active: true }]);",
               "err": {},
-              "uuid": "a28f2ed3-4ee1-463a-af5e-ca428fbc2fa9",
-              "parentUUID": "2ff1978d-0164-429b-b66f-f0b5ba1a493e",
+              "uuid": "b52b4d7d-bc9e-4d36-8b1b-95064d2b5ae9",
+              "parentUUID": "08b562f3-eec7-4ebd-b42d-a173a9542cb4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "cbcc69e7-22c8-4dda-8dd5-0224305a17de",
-            "02415864-9453-4139-99a6-da4c48ca2162",
-            "38b1fa36-a8d2-4845-adef-a42d5911b796",
-            "a28f2ed3-4ee1-463a-af5e-ca428fbc2fa9"
+            "53bf0a22-e411-4a56-b9bb-90ae909c9985",
+            "a76e3194-ed86-4a2b-a20a-2fed4f9c110b",
+            "ebee197b-23cf-49b8-863e-a5f29dc541bf",
+            "b52b4d7d-bc9e-4d36-8b1b-95064d2b5ae9"
           ],
           "failures": [
-            "a5195b19-8578-47ac-b0f2-80321ae7f0f5",
-            "55e077c4-8b76-471e-8050-733499822024",
-            "55245d06-9812-4525-b25e-55ecb0f44550"
+            "997547c7-db69-4600-a812-53f18aa1d286",
+            "4de75f4d-227f-430b-97c1-dd7a37f6367a",
+            "00ef8b78-2e31-4857-a595-f797807d2c56"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 4,
+          "duration": 2,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
