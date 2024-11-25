@@ -22,15 +22,8 @@ jobs:
 
     - name: "Run tests"
       run: npm run test
+    
+    - name: Run Coveralls
+      if: success() || failure()
+      uses: coverallsapp/github-action@master
 
-  coveralls:
-    name: Coveralls
-    if: ${{ always() }}
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          base-path: "./coverage"
