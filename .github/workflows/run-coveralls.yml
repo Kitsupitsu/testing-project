@@ -36,7 +36,7 @@ jobs:
         flag-name: ${{matrix.os}}-node-${{ matrix.node }}
         parallel: true
 
-  finish:
+  coveralls:
     if: ${{ always() }}
     needs: test
     runs-on: ubuntu-latest
@@ -46,3 +46,4 @@ jobs:
         with:
           parallel-finished: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          base-path: "./coverage"
