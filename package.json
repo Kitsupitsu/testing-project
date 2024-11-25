@@ -5,8 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "c8 --reporter=lcov mocha --reporter mochawesome",
-    "test-coverage": "npm test && nyc report --reporter=text-lcov | coveralls"
+    "test": "c8 --reporter=lcov mocha --reporter mochawesome"
   },
   "author": "",
   "license": "MIT",

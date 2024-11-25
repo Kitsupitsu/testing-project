@@ -21,5 +21,11 @@ jobs:
     - name: "Run tests"
       run: npm run test
 
-    - name: Coveralls
-      uses: coverallsapp/github-action@v2
+  coveralls:
+    name: Coveralls
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: build
+    steps:
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
