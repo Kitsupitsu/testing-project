@@ -92,5 +92,15 @@ describe('toNumber', function () {
       const value = undefined;
       expect(toNumber(value)).to.be.NaN;
     });
+
+    it('should convert number object to a number', function () {
+      const obj = new Number(42);
+      expect(toNumber(obj)).to.equal(42);
+    })
+
+    it('should convert string object to a number', function () {
+      const obj = new String("42");
+      expect(toNumber(obj)).to.equal(42);
+    })
   });
 });
