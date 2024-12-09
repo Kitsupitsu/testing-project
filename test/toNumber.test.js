@@ -80,6 +80,15 @@ describe('toNumber', function () {
       };
       expect(toNumber(obj)).to.be.NaN;
     });
+
+    it('should return NaN for object with valueOf method returning a symbol', function () {
+      const obj = {
+        valueOf: function() {
+          return Symbol('symbol');
+        }
+      };
+      expect(toNumber(obj)).to.be.NaN;
+    });
   })
 
   describe('objects', function () {
